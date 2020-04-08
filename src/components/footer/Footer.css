@@ -1,0 +1,29 @@
+.sunfw_section_footer {
+    background-color: #6d6e71;
+    background-image: url(../../assets/footer_bg.png);
+    border-top-width: 4px;
+    border-top-style: solid;
+    border-top-color: #c33;
+    color: #fff;
+    font-size: 13px;
+}
+
+h6 {
+    color: #fff !important;
+    border-bottom: 1px solid #c33;
+}
+
+.sunfw_section_copyright {
+    background-color: #2b3b65;
+    background-image: url(../../assets/wavy_blue.jpg);
+    border-top-width: 0.5px;
+    border-top-style: solid;
+    border-top-color: #ccc;
+    color: #bdbdbd;
+    font-size: 12px;
+}
+
+.sunfw_section_copyright {
+    padding-top: 10px;
+}
+

@@ -1,0 +1,14 @@
+.header-bg{
+    background-image: url(../../assets/wavy_bg.jpg);
+    max-height: 140px;
+    min-height: 70px;
+    width: 100%;
+    margin-top: 0;
+}
+
+.header-bg img{
+    max-height: 130px;
+    
+    margin-top: 5px;
+}
+

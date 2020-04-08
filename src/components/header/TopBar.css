@@ -1,0 +1,9 @@
+.top-bar{
+    margin-top: 0 0;
+    font-size: 13px ;
+    line-height: 1.1;
+}
+.top-bar img{
+    height: 4px;
+    width: 100%;
+}

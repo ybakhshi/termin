@@ -1,0 +1,19 @@
+{
+    "passport":"Passport",
+    "Tazkira":"Absentee Tazkira",
+    "powerOfAttorney": "Power of Attorney",
+    "visa":"Visa",
+    "travelPermit":"Travel Permit",
+    "verificationOfTazkira":"Verification of Tazkira",
+    "inheritanceCertificate":"Inheritance Certificate",
+    "birthCertificate":"Birth Certificate",
+    "marriageCertificate":"Marriage Certificate",
+    "divorceCertificate":"Divorce Certificate",
+    "confessionLetter":"Confession Letter",
+    "celibacyCertificate":"Celibacy Certificate",
+    "policeClearance":"Police Clearance",
+    "testamentLetter":"Testament Letter",
+    "deathCertificate":"Death Certificate",
+    "documentAttestation":"Documents Attestation",
+    "mofaDocuments":"Verification of MoFA Documents"
+}
