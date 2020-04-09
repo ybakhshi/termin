@@ -13,7 +13,8 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-md bg-dark navbar-dark" >
             <div className ="container">
-                <NavLink className="navbar-brand" to="#"> Website</NavLink>
+                <a className="navbar-brand" href="https://www.munich.mfa.af" target="_blank" rel="noopener noreferrer"> Website</a>
+                
                 <button 
                     //className="navbar-toggler" 
                     type="button" 
@@ -45,6 +46,16 @@ const Navbar = () => {
                             activeClassName ="main-nav-active"
                             
                         >APPOINTMENT
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink 
+                            onClick={toggleNavbar} 
+                            className="nav-link" 
+                            to="/passport" 
+                            activeClassName ="main-nav-active"
+                            
+                        >PASSPORT STATUS
                         </NavLink>
                     </li>
                     </ul>

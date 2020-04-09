@@ -45,7 +45,7 @@ const ConfirmEmailModal = (props) => {
             }
             <Modal
                     show ={show}
-                    size="sm"
+                    size="md"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                     isopen={modal.toString()} 
@@ -57,8 +57,9 @@ const ConfirmEmailModal = (props) => {
                         </Modal.Title>
                     </Modal.Header>
                         <Modal.Body>
-                                <p>We just sent you a PIN in this email: 
+                                <p>A PIN is sent to this email:
                                     <button className ="btn btn-link btn-sm m-0 p-0">{email}</button>
+                                    کُد به این ایمیل فرستاده شد
                                 </p>
                                 <div className="input-group mb-2">
                                     <input  type="text" 
@@ -73,7 +74,7 @@ const ConfirmEmailModal = (props) => {
                                             name ="confirm"
                                             onClick ={() => validatePIN()}
                                         >
-                                            Confirm
+                                            CONFIRM
                                         </button>
                                     </div>
                                     
@@ -81,10 +82,10 @@ const ConfirmEmailModal = (props) => {
                                 <div className ="text-danger small message error mb-2">
                                     {error ? error : ''}
                                 </div>
-                                <p>Didn't you receive the PIN? Then click on 
+                                <p>Didn't you get the PIN? Then click on 
                                     <button onClick ={sendEmail} className ="btn btn-sm btn-link m-0 p-0 mr-1">
-                                        <strong>Resend PIN </strong></button>  
-                                    to send it again
+                                        <strong> Resend PIN </strong></button>  
+                                    to send it again. دریافت دوباره کُد
                                 </p>
                         </Modal.Body>
                     <Modal.Footer>
