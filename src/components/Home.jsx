@@ -14,18 +14,20 @@ class Home extends Component {
                         <p > به بخش سیستم مدیریت وقت ملاقات های جنرال قونسلی جمهوری اسلامی افغانستان در مونیخ، خوش آمدید.
 امیدواریم که با ارائه سیستم آنلاین تنظیم ملاقات ها؛ سهولتی را برای شما به وجود آورده باشیم.
                         </p>
+                        <hr className ="bg-primary"/>
                         <h4>ښاغليو / آغلو  مراجعينو !</h4>
                         <p>
                         د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي  ته ښه راغلاست. 
 هيله لرو چي ستاسو لپار مو د انټرنيټي سيستم له لاري د کتني (ملاقات) په پروسه کي آسانتيا را منځته کړي وي .
                         </p>
+                        <hr className ="bg-primary"/>
                         <h4 dir ="ltr" className="text-left">Dear All,</h4>
                         <p dir ="ltr" className ="text-left">
                             Welcome to Appointment Management System of General Consulate of I.R. of Afghanistani in Munich.
                             We encourage you to make an appointment in advance before approaching us for any sort of consulate services.
                         </p>
                     </div>
-                    <hr/>
+                    <hr className ="bg-primary"/>
                     <div className="row mb-3">
                         <div className="col-md-6">
                             <div className="card">
