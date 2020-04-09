@@ -14,9 +14,10 @@ class Home extends Component {
                         <p > به بخش سیستم مدیریت وقت ملاقات های جنرال قونسلی جمهوری اسلامی افغانستان در مونیخ، خوش آمدید.
 امیدواریم که با ارائه سیستم آنلاین تنظیم ملاقات ها؛ سهولتی را برای شما به وجود آورده باشیم.
                         </p>
-                        <h4>محترمو مراجعين،</h4>
+                        <h4>ښاغليو / آغلو  مراجعينو !</h4>
                         <p>
-                        د افغانستان د اسلامي جمهوريت قونسلګري په مونشن کي د ملاقات يا وخت نيولو د سيستم د مديريت څانګي ته شه راغلاست اميد وار ياستو چه د انلاين ملاقاتونو د تنظيمولو په واسطه و کولي شو چه تاسي ګرانو هيوادوالو ته يو څه سهولتونه. مو راوستي وي.
+                        د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي  ته ښه راغلاست. 
+هيله لرو چي ستاسو لپار مو د انټرنيټي سيستم له لاري د کتني (ملاقات) په پروسه کي آسانتيا را منځته کړي وي .
                         </p>
                         <h4 dir ="ltr" className="text-left">Dear All,</h4>
                         <p dir ="ltr" className ="text-left">
@@ -48,7 +49,7 @@ class Home extends Component {
                                     <img className="img-fluid rounded" src={passImage} alt="Passport"/>
                                 </div>
                                 <div className="card-footer ">
-                                    <Link className="btn btn-outline-primary form-control" to="#"> Click Here | اینجا کلیک کنید</Link>
+                                    <Link className="btn btn-outline-primary form-control" to="/passport"> Click Here | اینجا کلیک کنید</Link>
                                 </div>
                             </div>
                         </div>

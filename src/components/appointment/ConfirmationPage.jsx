@@ -34,7 +34,22 @@ const ConfirmationPage = ({formData}) => {
                                 <li>You can download and fill the required forms from our webstie</li>
                             </ul>
                             <p>Best regards</p>
-                            <p>Consulate General of The I.R. of Afghanistan, Munich </p>
+                            Admin<br/>
+                            Consulate General of The I.R. of Afghanistan, Munich
+                            <hr/>
+                            <div dir="rtl" className="text-right">
+                                <p><strong>هموطن گرامی،</strong></p>
+                                <p>وقت ملاقات شما با مشخصات زیر موفقانه در سیستم ما ثبت شد:</p>
+                                <ul>
+                                    <li>تاریخ ملاقات: &emsp; <strong>{formData.newDate}</strong></li>
+                                    <li>موضوع ملاقات: &emsp;<strong>{serviceData[subject]}</strong></li>
+                                    <li>اعضای فامیل: &emsp;<strong>{formData.companions ==="none"? "ندارد": formData.companions}</strong></li>
+                                </ul>
+                                <p className=""> لطفا بین ساعت 9:00 صبح الی 12:30 در جنرال قونسلی تشریف داشته باشید.</p>
+                                <p>بااحترام</p>
+                                ادمین <br/>
+                                جنرال قونسلی جمهوری اسلامی افغانستان  - مونیخ
+                            </div>
                         </div>
                 </div>
             </div>

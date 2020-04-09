@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import config from '../../config.json';
 import { getDay, addDays} from 'date-fns';
@@ -9,56 +9,44 @@ import './formFunctions.css';
 
 // react-date-picker library is used here. its dependecy  is date-fns
 const DatePicker = ({input, label, meta, service}) => {
+    const[disableTheseDates, setTheseDates] = useState([]);
+    
     const className = `form-control form-control-lg ${meta.error && meta.visited ? 'is-invalid': ''}`;
     //filter weekend dates
     const isWeekday = (date) => {
         const day = getDay(date);
         return day !== 0  && day !== 6;
     };
-    const disableFullyBookedDates =()=>{
-        const disableBookedDates =[];
-        const data = {service: service}
-        axios.post(config.apiEndPoint+'/disablefullybookeddates.php',data)
-        .then(response =>{
-            console.log(response.data);
-            response.data.forEach(eachDate =>{
-                disableBookedDates.push(addDays(new Date(),eachDate));
-            })
-        });
+    
+    useEffect(()=>{
+        
+        ((service)=>{
+            const disableBookedDates =[];
+            // fOR LIVE PHP SERVER
+            axios.post(config.apiEndPoint+'/disablefullybookeddates.php',{service})
+            .then(response =>{
+                response.data.forEach(eachDate =>{
+                    disableBookedDates.push(addDays(new Date(),eachDate));
+                })
+            });
+            //FOR LOCAL PHP SERVER
+            // axios({
+            //     method: 'post',
+            //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            //     url: config.apiEndPoint+'/disablefullybookeddates.php',
+            //     data: {service: service}
+            // })
+            // .then(response =>{
+            //     console.log(response.data);
+            //     response.data.forEach(eachDate =>{
+            //         disableBookedDates.push(addDays(new Date(),eachDate));
+            //     })
+            // });
 
-        // axios({
-        //         method: 'post',
-        //         // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        //         url: config.apiEndPoint+'/disablefullybookeddates.php',
-        //         data: {service: service}
-        //     })
-        //     .then(response =>{
-        //         console.log(response.data);
-        //         response.data.forEach(eachDate =>{
-        //             disableBookedDates.push(addDays(new Date(),eachDate));
-        //         })
-        //     });
-        return disableBookedDates;
-    }
-    // useEffect(()=>{
-    //     const disableFullyBookedDates =()=>{
-    //         const disableBookedDates =[];
-    //         axios({
-    //                 method: 'post',
-    //                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //                 url: config.apiEndPoint+'/disablefullybookeddates.php',
-    //                 data: {service: service}
-    //             })
-    //             .then(response =>{
-    //                 console.log(response.data);
-    //                 response.data.forEach(eachDate =>{
-    //                     disableBookedDates.push(addDays(new Date(),eachDate));
-    //                 })
-    //             });
-    //         return disableBookedDates;
-    //     }
-    //     disableFullyBookedDates();
-    // },[service]);
+            setTheseDates(disableBookedDates);
+        })(service);
+        
+    },[service]);
    // remove moment latter
     return (
             <div className= "form-group">
@@ -75,7 +63,7 @@ const DatePicker = ({input, label, meta, service}) => {
                     name ={input.name}
                     locale ={input.fi}
                     autoComplete ="off"
-                    excludeDates ={disableFullyBookedDates()}
+                    excludeDates ={disableTheseDates}
                     
                 />
                 <div className ="text-danger small message error">
@@ -88,3 +76,4 @@ const DatePicker = ({input, label, meta, service}) => {
 };
 
 export default React.memo(DatePicker);
+

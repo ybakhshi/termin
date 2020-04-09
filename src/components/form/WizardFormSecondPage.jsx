@@ -4,7 +4,7 @@ import { Field, reduxForm, formValueSelector, SubmissionError} from 'redux-form'
 import {validate} from '../validation/validate';
 //import {asyncValidate} from '../validation/asyncValidate';
 import { InputElement, SelectElement } from './formFunctions';
-import { subjects } from './formData';
+import data from '../../data.json';
 import DatePicker from './DatePicker';
 import ConfirmEmailModal from './ConfirmEmailModal';
 import axios from 'axios';
@@ -32,6 +32,7 @@ let WizardFormSecondPage = (props) => {
       } = props;
   // to make sure email is verified only one time, if not changed
   const [test, setTest] =useState(emailStatus.name);
+  const serviceKeys = Object.keys(data);
   
   const setNextButton =(status)=>{
     forNext =status;
@@ -60,7 +61,7 @@ let WizardFormSecondPage = (props) => {
   const checkSubmit = (e) =>{
     if(!forNext){
         e.preventDefault();
-        setError("You must verify your email. Retype your email to verify!");
+        setError("Please verify your email. ایمیل تانرا باید تایید کنید");
     }
   }
   
@@ -79,9 +80,15 @@ let WizardFormSecondPage = (props) => {
         console.log(ex);
       }
       if(response.data==="moreThan3Appointments")
-      throw new SubmissionError({appointmentDate:"You have 3 active appointments! بیشتر از سه وقت ملاقات اجازه ندارید"});
+      throw new SubmissionError({
+        appointmentDate:"You have 3 active appointments! بیشتر از سه وقت ملاقات اجازه ندارید",
+        _error: "شما قبلا وقت ملاقات اخذ نموده اید"
+      });
       else if(response.data==="hasOneAppointment")
-      throw new SubmissionError({service:"You have already an appointment! شما برای این موضوع یک وقت ملاقات دارید "});
+      throw new SubmissionError({
+        service:"You have already an appointment! شما برای این موضوع یک وقت ملاقات دارید ",
+        _error: "شما قبلا وقت ملاقات اخذ نموده اید"
+      });
       else
       props.nextPage();
 }
@@ -106,11 +113,11 @@ let WizardFormSecondPage = (props) => {
               onChange ={()=>setProgress(40)}
           >
             <option value="" disabled defaultValue hidden>Select a Service</option>
-            {subjects.map((serviceName, key) =>(
+            {serviceKeys.map((key) =>(
                 <option 
                     key={key} 
-                    value ={serviceName.value}> 
-                    {serviceName.label}
+                    value ={key}> 
+                    {data[key]}
                 </option>
             ))}   
           </Field>
@@ -157,7 +164,7 @@ let WizardFormSecondPage = (props) => {
           }
   
           <div className ="text-danger  message error mb-2">
-              <p className="text-center">{verifyError ? verifyError : ''}</p>
+              <p className="text-center text-sm-center ">{verifyError ? verifyError : ''}</p>
           </div>
           {(email === repeatEmail) && (!test) && renderModal()}
   
@@ -199,7 +206,7 @@ let WizardFormSecondPage = (props) => {
               </div>
             
           </div>
-          {error && <strong>{error}</strong>}
+          <div className ="text-danger text-center small error message">{error && <strong>{error}</strong>}</div>
         </div>
       </form>
       <h4 className="text-center">2 | 3</h4>
