@@ -34,7 +34,7 @@ const Navbar = () => {
                         <NavLink 
                             onClick={toggleNavbar} 
                             exact className="nav-link" 
-                            to="/" activeClassName ="main-nav-active"
+                            to="./" activeClassName ="main-nav-active"
                         >HOME
                         </NavLink>
                     </li>
@@ -42,7 +42,7 @@ const Navbar = () => {
                         <NavLink 
                             onClick={toggleNavbar} 
                             className="nav-link" 
-                            to="/appointment" 
+                            to="./appointment" 
                             activeClassName ="main-nav-active"
                             
                         >APPOINTMENT
@@ -52,7 +52,7 @@ const Navbar = () => {
                         <NavLink 
                             onClick={toggleNavbar} 
                             className="nav-link" 
-                            to="/passport" 
+                            to="./passport" 
                             activeClassName ="main-nav-active"
                             
                         >PASSPORT STATUS
