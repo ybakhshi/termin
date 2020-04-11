@@ -27,12 +27,12 @@ function App() {
           <Header/>     
           <div className ="Site-content">
                 <Switch>
-                  <Route path ="./edit/:id" component = {Edit} />
-                  <Route path = "./not-found" component = {NotFound}/>
-                  <Route path ="./passport" component = {PassportPage} />
-                  <Route path ="./appointment" component = {BookAppointment} />
-                  <Route path ="./" component = {Home} />
-                  <Redirect to = "./not-found"/>
+                  <Route exact path ="/edit/:id" component = {Edit} />
+                  <Route path = "/not-found" component = {NotFound}/>
+                  <Route path ="/passport" component = {PassportPage} />
+                  <Route path ="/appointment" component = {BookAppointment} />
+                  <Route exact path ="/" component = {Home} />
+                  <Redirect to = "/not-found"/>
                 </Switch>
           </div>
           <Footer/>
