@@ -23,7 +23,7 @@ function App() {
   return (
       <div className ="Site">
         <ToastContainer/>
-        <Router history ={history}>
+        <Router  basename= {process.env.PUBLIC_URL}>
           <Header/>     
           <div className ="Site-content">
                 <Switch>
