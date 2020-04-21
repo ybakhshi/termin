@@ -51,7 +51,7 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className="card-body bg-light">
-                                    <a href="/termin/appointment">
+                                    <a href="./termin/appointment">
                                         <img className="img-fluid rounded" src={consulateBuilding} alt="Consulate building"/>
                                     </a>
                                 </div>
@@ -70,7 +70,7 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className="card-body bg-light">
-                                    <a href="/termin/passport">
+                                    <a href="./termin/passport">
                                         <img className="img-fluid rounded" src={passImage} alt="Passport"/>
                                     </a>
                                 </div>

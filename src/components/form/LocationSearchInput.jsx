@@ -62,7 +62,7 @@ const LocationSearchInput = props => {
                     {...getInputProps()} 
                     
                     className ={className}
-                    placeholder = "Search | یافتن آدرس"
+                    placeholder = "Straße N, postleitzahl, Stadt | یافتن آدرس"
             />
             <div className ="text-danger small message error">
                 
