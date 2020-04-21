@@ -1,30 +1,24 @@
 import appointmentAxios from '../apis/appointmentAxios';
-import {history} from '../history';
-import axios from 'axios';
+import config from '../config.json';
+
 import {
-    INSERT_APPOINTMENT,
     DELETE_APPOINTMENT,
     LIST_APPOINTMENTS
 } from './types';
 
-export const insertAppointment = (formValues) => async (dispatch) =>{
-    //const {userId} = getState().auth;
-    
-    const response = await axios({
-        method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        url: 'http://localhost/system/insert.php',
-        data: formValues
-    });
-    history.push("/");
-    //const response = await appointmentAxios.post("/insert.php", formValues, headers);
-    //above return a single stream
-    dispatch ({type: INSERT_APPOINTMENT, payload: response.data});
-    // do some programmatic navigtion to get the user back to the root 
-    //history.push("/");
+export const insertAppointment = (formValues) =>{
+    console.log(formValues);
+    appointmentAxios.post('/insertdata.php', {...formValues},{headers: config.headers});
 };
 
-export const listAppointments = () => async (dispatch, getState) => {
+export const hasActiveAppointment = (service, email)=>{
+    return appointmentAxios.post('/hasactiveappointment.php', {service, email},{headers: config.headers});
+}
+export const disableFullyBookedDates = (service)=>{
+    return appointmentAxios.post('/disablefullybookeddates.php',{service},{headers: config.headers});
+}
+
+export const listAppointments = () => async (dispatch) => {
         const response  = await appointmentAxios.get("/view.php");
         dispatch({type: LIST_APPOINTMENTS, payload: response.data});
     };

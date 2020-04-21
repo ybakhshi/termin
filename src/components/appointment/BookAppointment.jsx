@@ -5,8 +5,7 @@ import WizardForm from '../form/WizardForm';
 import {returnFormatteWeek } from '../form/formFunctions';
 import { englishWeekNames } from './../form/formData';
 import ConfirmationPage from './ConfirmationPage';
-import axios from 'axios';
-import config from '../../config.json';
+import {insertAppointment} from '../../actions/index';
 import './BookAppointment.css';
 import {toast} from 'react-toastify';
 import {reset} from 'redux-form';
@@ -23,10 +22,8 @@ class BookAppointment extends Component {
         else
         {
             return (
-                <div className="jumbotron jumbotron-fluid bg-white  pt-3">
-                    <div className ="container">
-                        <WizardForm onSubmit = {this.onSubmit}/>
-                    </div>
+                <div className ="container book-termin">
+                    <WizardForm onSubmit = {this.onSubmit}/>
                 </div>
             );
         }
@@ -50,7 +47,7 @@ class BookAppointment extends Component {
         }
     }
     // sumbit form data to backend
-    onSubmit = async (formValues) =>{
+    onSubmit = (formValues) =>{
         let filteredFormData ={};
         const id = uuidv4()+Date.now();
         let companions ="";
@@ -112,23 +109,12 @@ class BookAppointment extends Component {
         }
 
         try{
-                await axios({
-                method: 'post',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                //url: 'https://wwww.afghanconsulate-munich.com/terminserver/sendemail.php',
-                url: config.apiEndPoint+'/insertdata.php',
-                data: filteredFormData
-            });
-            
+            insertAppointment(filteredFormData);
             this.setState({...filteredFormData});
             this.props.dispatch(reset('wizard'));
             
         }catch(ex){
-            console.log("Error"+ex);
             toast("something went wrong, please click CONFIRM again!");
-        }
-        finally{
-            console.log("any error");
         }
 
     }

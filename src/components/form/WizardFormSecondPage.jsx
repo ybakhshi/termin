@@ -2,13 +2,12 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { Field, reduxForm, formValueSelector, SubmissionError} from 'redux-form';
 import {validate} from '../validation/validate';
-//import {asyncValidate} from '../validation/asyncValidate';
+import {hasActiveAppointment} from '../../actions/index';
 import { InputElement, SelectElement } from './formFunctions';
 import data from '../../data.json';
 import DatePicker from './DatePicker';
 import ConfirmEmailModal from './ConfirmEmailModal';
-import axios from 'axios';
-import config from '../../config.json';
+
 //globale varibles
 var forNext =false;
 
@@ -66,18 +65,12 @@ let WizardFormSecondPage = (props) => {
   }
   
   const submit = async (values)=>{
-    const data = {service: values.service, email: values.email};
-    
-        try{
-          var response = await axios({
-          method: 'post',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          url: config.apiEndPoint+'/hasactiveappointment.php',
-          data: data
-        });
+      try{
+          var response = await hasActiveAppointment(values.service,values.email);
       }
       catch(ex){
-        console.log(ex);
+        alert("Something went wrong with us. pleas try again later!");
+        return;
       }
       if(response.data==="moreThan3Appointments")
       throw new SubmissionError({

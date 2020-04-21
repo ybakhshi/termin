@@ -1,5 +1,5 @@
 import axios from 'axios';
+import config from '../config.json';
 export default axios.create({
-    //baseURL: "http://localhost/system"
-    baseURL: "https://afghanconsulate-munich.com/terminserver"
+    baseURL: config.apiEndPoint
 });
