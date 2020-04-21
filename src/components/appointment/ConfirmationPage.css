@@ -1,9 +1,5 @@
-p span{
-    color: orange !important;
-    
-}
 .value-text{
     display: inline;
     color: #0074D9;
-    font-size: 18px;
+    font-size: 16px;
 }
