@@ -1,0 +1,40 @@
+{
+    "en-fa":{
+        "passport":"http://go.mfa.af/passport-form",
+        "Tazkira":"http://go.mfa.af/tazkira-form-dari-munich",
+        "powerOfAttorney": "http://cdn.mfa.af/econsulate_forms/power_of_attorney.pdf",
+        "visa":"http://go.mfa.af/VisaForm",
+        "travelPermit":"https://www.munich.mfa.af/images/forms/travel_per_form.pdf?type=file",
+        "verificationOfTazkira":"http://go.mfa.af/tazkira-form-dari-munich",
+        "inheritanceCertificate":"http://go.mfa.af/",
+        "birthCertificate":"http://go.mfa.af/",
+        "marriageCertificate":"http://go.mfa.af/",
+        "divorceCertificate":"http://go.mfa.af/",
+        "confessionLetter":"http://go.mfa.af/",
+        "celibacyCertificate":"http://go.mfa.af/",
+        "policeClearance":"http://go.mfa.af/",
+        "testamentLetter":"http://go.mfa.af/",
+        "deathCertificate":"http://go.mfa.af/",
+        "documentAttestation":"http://go.mfa.af/",
+        "mofaDocuments":"http://go.mfa.af/"
+    },
+    "pashto":{
+        "passport":"http://go.mfa.af/",
+        "Tazkira":"http://go.mfa.af/",
+        "powerOfAttorney": "http://go.mfa.af/",
+        "visa":"http://go.mfa.af/VisaForm",
+        "travelPermit":"http://go.mfa.af/",
+        "verificationOfTazkira":"http://go.mfa.af/",
+        "inheritanceCertificate":"http://go.mfa.af/",
+        "birthCertificate":"http://go.mfa.af/",
+        "marriageCertificate":"http://go.mfa.af/",
+        "divorceCertificate":"http://go.mfa.af/",
+        "confessionLetter":"http://go.mfa.af/",
+        "celibacyCertificate":"http://go.mfa.af/",
+        "policeClearance":"http://go.mfa.af/",
+        "testamentLetter":"http://go.mfa.af/",
+        "deathCertificate":"http://go.mfa.af/",
+        "documentAttestation":"http://go.mfa.af/",
+        "mofaDocuments":"http://go.mfa.af/"
+    }
+}

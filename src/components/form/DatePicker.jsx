@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import config from '../../config.json';
+import {disableFullyBookedDates} from '../../actions/index';
 import { getDay, addDays} from 'date-fns';
 import ReactDatePciker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -20,34 +19,23 @@ const DatePicker = ({input, label, meta, service}) => {
     
     useEffect(()=>{
         
-        ((service)=>{
+        (async(service)=>{
             const disableBookedDates =[];
-            // fOR LIVE PHP SERVER
-            axios.post(config.apiEndPoint+'/disablefullybookeddates.php',{service})
-            .then(response =>{
-                response.data.forEach(eachDate =>{
-                    disableBookedDates.push(addDays(new Date(),eachDate));
-                })
+            try {
+                var response = await disableFullyBookedDates(service);
+            } catch (error) {
+                alert("Something went wrong! please try again!");
+                return;
+            }
+            response.data.forEach(eachDate =>{
+                disableBookedDates.push(addDays(new Date(),eachDate));
             });
-            //FOR LOCAL PHP SERVER
-            // axios({
-            //     method: 'post',
-            //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            //     url: config.apiEndPoint+'/disablefullybookeddates.php',
-            //     data: {service: service}
-            // })
-            // .then(response =>{
-            //     console.log(response.data);
-            //     response.data.forEach(eachDate =>{
-            //         disableBookedDates.push(addDays(new Date(),eachDate));
-            //     })
-            // });
-
+            
             setTheseDates(disableBookedDates);
         })(service);
         
     },[service]);
-   // remove moment latter
+   
     return (
             <div className= "form-group">
                 <label htmlFor={input.name}>{label}</label>               
@@ -77,3 +65,30 @@ const DatePicker = ({input, label, meta, service}) => {
 
 export default React.memo(DatePicker);
 
+// fOR LIVE PHP SERVER
+            // axios.post(config.apiEndPoint+'/disablefullybookeddates.php',{service})
+            // .then(response =>{
+            //     response.data.forEach(eachDate =>{
+            //         disableBookedDates.push(addDays(new Date(),eachDate));
+            //     })
+            // });
+            //FOR LOCAL PHP SERVER
+
+// .then(response =>{
+            //     console.log(response.data);
+            //     response.data.forEach(eachDate =>{
+            //         disableBookedDates.push(addDays(new Date(),eachDate));
+            //     })
+            // });
+            // axios({
+            //     method: 'post',
+            //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            //     url: config.apiEndPoint+'/disablefullybookeddates.php',
+            //     data: {service: service}
+            // })
+            // .then(response =>{
+            //     console.log(response.data);
+            //     response.data.forEach(eachDate =>{
+            //         disableBookedDates.push(addDays(new Date(),eachDate));
+            //     })
+            // });

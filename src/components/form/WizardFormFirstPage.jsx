@@ -20,8 +20,7 @@ let WizardFormFirstPage = (props) => {
     stateList,
     
 } = props;
-// for conditional rendering of firstname , lastname, family members
-//const addressArray = address? Object.values(address) : [];
+
 
 
 const rederSingleInput =(i) =>{
@@ -49,8 +48,8 @@ const rederSingleInput =(i) =>{
                 onChange ={()=>setProgress(10)}
             >
               <option value="" disabled defaultValue hidden>Select a list</option>
-              <option value ="Bayern">Bayern</option>
-              <option value ="Baden-Württemberg">Baden-Württemberg</option>
+              <option  value ="Bayern">Bayern</option>
+              <option  value ="Baden-Württemberg">Baden-Württemberg</option>
                   
           </Field>
   
