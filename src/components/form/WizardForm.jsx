@@ -35,7 +35,7 @@ class WizardForm extends Component {
             </div>
         </div>
         {/* <div style ={{backgroundColor:'#e9ecef'}}><hr className ="mt-0 mb-0 ml-5 mr-5 bg-dark"/></div> */}
-        <div className ="card-body">
+        <div className ="card-body p-3">
           <div className ="jumbotron m-0">
             {page === 1 && <WizardFormFirstPage setProgress ={this.setProgress} onSubmit={this.nextPage}/>}
             {page === 2 && <WizardFormSecondPage 

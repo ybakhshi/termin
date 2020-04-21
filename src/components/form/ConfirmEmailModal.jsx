@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import { Modal } from 'react-bootstrap';
 import pinGenerator from 'generate-pincode';
-import axios from 'axios';
-import config from '../../config.json';
+import {sendPinEmail} from '../../actions/index';
 
 const ConfirmEmailModal = (props) => {
     const { email, hide, show, emailIsVerified, setNextButton} = props;
@@ -12,16 +11,14 @@ const ConfirmEmailModal = (props) => {
     const [error, setError] =useState('');
     const [emailSent, setEmailSent] =useState(true);
     
-    const sendEmail = async ()=>{
+    const sendEmail = () =>{
         const data ={generatedPIN, email}
-        //console.log(generatedPIN);
-        const response = await axios({
-            method: 'post',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: config.apiEndPoint+'/sendemail.php',
-            data: data
-        });
-        console.log(response.data);
+        try {
+            sendPinEmail(data);
+        } catch (ex) {
+            alert("Something went wrong! Please check your connection and try again!")
+        }
+        
     }
 
     const validatePIN =() =>{

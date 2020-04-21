@@ -45,7 +45,7 @@ const Navbar = () => {
                             to="/appointment" 
                             activeClassName ="main-nav-active"
                             
-                        >APPOINTMENT
+                        >APPOINTMENT | TERMIN
                         </NavLink>
                     </li>
                     <li className="nav-item">
