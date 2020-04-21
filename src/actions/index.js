@@ -7,7 +7,6 @@ import {
 } from './types';
 
 export const insertAppointment = (formValues) =>{
-    console.log(formValues);
     appointmentAxios.post('/insertdata.php', {...formValues},{headers: config.headers});
 };
 
@@ -18,6 +17,9 @@ export const disableFullyBookedDates = (service)=>{
     return appointmentAxios.post('/disablefullybookeddates.php',{service},{headers: config.headers});
 }
 
+export const sendPinEmail = (data) =>{
+    appointmentAxios.post('/sendemail.php', {...data},{headers: config.headers});
+}
 export const listAppointments = () => async (dispatch) => {
         const response  = await appointmentAxios.get("/view.php");
         dispatch({type: LIST_APPOINTMENTS, payload: response.data});

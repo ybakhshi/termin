@@ -1,5 +1,5 @@
 {
-    "apiEndPoint" : "https://www.munich.mfa.af/terminserver",
+    "apiEndPoint" : "http://localhost/terminserver",
     "headers" :  { "Content-Type": "application/x-www-form-urlencoded"}
 }
 

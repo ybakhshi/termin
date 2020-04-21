@@ -11,4 +11,11 @@
     
     margin-top: 5px;
 }
-
+.facebook{
+    font-size: 28px !important;
+    color: #4267B2 !important;
+    border-radius: 15px !important;
+}
+.facebook:hover{
+    transform: scale(1.2);  
+}

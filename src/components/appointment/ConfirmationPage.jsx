@@ -17,12 +17,12 @@ const ConfirmationPage = ({formData}) => {
                     <h4 className ="mb-4 text-center">Appointment Confirmation</h4>
                     <p>Dear Mr./Mrs. {formData.firstName + " " +formData.lastName},</p>
                     <p>You have just booked an appointment for  
-                        <div className ="value-text"> {serviceData[subject]} </div> 
+                        <span className ="value-text"> {serviceData[subject]} </span> 
                         at General Consulate of I.R. Afghanistan in Munich.
                     </p>
                     <p>Your appointment is on  
-                        <div className ="value-text"> {formData.weekDay} </div>,  
-                        <div className ="value-text"> {formData.newDate} </div> 
+                        <span className ="value-text"> {formData.weekDay} </span>,  
+                        <span className ="value-text"> {formData.newDate} </span> 
                     </p>
                     
                     <h5>Notes:</h5>
@@ -45,10 +45,10 @@ const ConfirmationPage = ({formData}) => {
                             <p><b>هموطن گرامی،</b></p>
                             <p>وقت ملاقات شما با مشخصات زیر موفقانه در سیستم ما ثبت شد:</p>
                             <ul>
-                                <li>نام و نام فامیلی: &emsp; <div className ="value-text">{formData.firstName + " " +formData.lastName}</div></li>
-                                <li>تاریخ ملاقات: &emsp; <div className ="value-text">{formData.newDate}</div></li>
-                                <li>موضوع ملاقات: &emsp;<div className ="value-text">{serviceData[subject]}</div></li>
-                                <li>اعضای فامیل: &emsp;<div className ="value-text">{formData.companions ==="none"? "ندارد": formData.companions}</div></li>
+                                <li>نام و نام فامیلی: &emsp; <span className ="value-text">{formData.firstName + " " +formData.lastName}</span></li>
+                                <li>تاریخ ملاقات: &emsp; <span className ="value-text">{formData.newDate}</span></li>
+                                <li>موضوع ملاقات: &emsp;<span className ="value-text">{serviceData[subject]}</span></li>
+                                <li>اعضای فامیل: &emsp;<span className ="value-text">{formData.companions ==="none"? "ندارد": formData.companions}</span></li>
                             </ul>
                             <p className=""> لطفا بین ساعت 9:00 صبح الی 12:30 در جنرال قونسلی تشریف داشته باشید.</p>
                             بااحترام<br/>
@@ -67,10 +67,10 @@ const ConfirmationPage = ({formData}) => {
                             <p><b>محترمو هیوادوالو!</b></p>
                             <p>ستاسو د ملاقات وقت زمونژ په سیستم کی په لاندی جزیاتو ثبت شو:</p>
                             <ul>
-                                <li>نوم او تخلص: &emsp; <div className ="value-text">{formData.firstName + " " +formData.lastName}</div></li>
-                                <li>د ملاقات نیټه: &emsp; <div className ="value-text">{formData.newDate}</div></li>
-                                <li>د ملاقات موضوع: &emsp;<div className ="value-text">{serviceData[subject]}</div></li>
-                                <li>د فامیل غړی:  &emsp;<div className ="value-text">{formData.companions ==="none"? "نلروم": formData.companions}</div></li>
+                                <li>نوم او تخلص: &emsp; <span className ="value-text">{formData.firstName + " " +formData.lastName}</span></li>
+                                <li>د ملاقات نیټه: &emsp; <span className ="value-text">{formData.newDate}</span></li>
+                                <li>د ملاقات موضوع: &emsp;<span className ="value-text">{serviceData[subject]}</span></li>
+                                <li>د فامیل غړی:  &emsp;<span className ="value-text">{formData.companions ==="none"? "نلروم": formData.companions}</span></li>
                             </ul>
                             <p className=""> مهربانی وکړی د سهاد د ۹:۰۰ بجو څخه د غرمی تر ۱۲:۳۰ بجو پوری د افغانستان د اسلامی جمهوریت په قونسلګری کی تشریف ولری. 
                             </p>

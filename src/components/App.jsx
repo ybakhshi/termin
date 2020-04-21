@@ -11,13 +11,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fab, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import PassportPage from './PassportPage';
 import NotFound from './appointment/NotFound';
 
 
-library.add(fab, faCheckSquare, faCoffee, faSpinner )
+library.add(fab, faCheckSquare, faCoffee, faSpinner, faFacebook )
 
 function App() {
   return (
