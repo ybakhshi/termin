@@ -10,43 +10,43 @@ class Home extends Component {
             <div className ="jumbotron jumbotron-fluid bg-white  pt-3 ">
                 <div className ="container border">
                 
-                    <div className="px-3 py-0 rounded">
-                    <div className="card-deck">
-                    <div className="card bg-light ">
-                        <div className="card-body ">
-                            <h3 dir ="ltr" className="text-left">Dear All,</h3>
-                            <p dir ="ltr" className ="text-left">
-                                Welcome to Appointment Management System of General Consulate of I.R. of Afghanistani in Munich.
-                                We encourage you to make an appointment in advance before approaching us for any sort of consulate services.
-                            </p>
+                    <div className="px-3 py-0 rounded p-5">
+                        <div className="card-deck m-3">
+                            <div className="card ">
+                                <div className="card-body ">
+                                    <h3 dir ="ltr" className="text-left">Dear All,</h3>
+                                    <p dir ="ltr" className ="text-left">
+                                        Welcome to Appointment Management System of General Consulate of I.R. of Afghanistani in Munich.
+                                        We encourage you to make an appointment in advance before approaching us for any sort of consulate services.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card bg-light ">
-                            <div className="card-body text-right" dir ="rtl">
-                            <h3>مراجعین گرامی،</h3>
-                            <p > به بخش سیستم مدیریت وقت ملاقات های جنرال قونسلی جمهوری اسلامی افغانستان در مونیخ، خوش آمدید.</p>
-                            <p>امیدواریم که با ارائه سیستم آنلاین تنظیم ملاقات ها؛ سهولتی را برای شما به وجود آورده باشیم.</p>
+                            <div className="card ">
+                                <div className="card-body text-right" dir ="rtl">
+                                <h3>مراجعین گرامی،</h3>
+                                <p > به بخش سیستم مدیریت وقت ملاقات های جنرال قونسلی جمهوری اسلامی افغانستان در مونیخ، خوش آمدید.</p>
+                                <p>امیدواریم که با ارائه سیستم آنلاین تنظیم ملاقات ها؛ سهولتی را برای شما به وجود آورده باشیم.</p>
+                                
+                                </div>
+                            </div>
                             
+                            <div className="card ">
+                                <div className="card-body text-right" dir ="rtl">
+                                <h3>ښاغليو / آغلو  مراجعينو !</h3>
+                                <p>
+                                د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي  ته ښه راغلاست.</p> 
+                                <p> هيله لرو چي ستاسو لپار مو د انټرنيټي سيستم له لاري د کتني (ملاقات) په پروسه کي آسانتيا را منځته کړي وي .</p>
+                                
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div className="card bg-light ">
-                            <div className="card-body text-right" dir ="rtl">
-                            <h3>ښاغليو / آغلو  مراجعينو !</h3>
-                            <p>
-                            د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي  ته ښه راغلاست.</p> 
-                            <p> هيله لرو چي ستاسو لپار مو د انټرنيټي سيستم له لاري د کتني (ملاقات) په پروسه کي آسانتيا را منځته کړي وي .</p>
-                            
-                            </div>
-                        </div>
-                    </div> 
+                        </div> 
                     </div>
                     
                     {/* <div className="bg-light p-4 rounded text-right" dir="rtl"> */}
                       
                     
-                    <hr className ="bg-primary mt-0"/>
-                    <div className="row mb-3">
+                    <hr className ="bg-primary mt-0 mx-5"/>
+                    <div className="row mb-3 p-5 ">
                         <div className="col-md-6">
                             <div className="card">
                                 <div className="card-header bg-primary">
