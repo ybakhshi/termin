@@ -11,31 +11,31 @@ class Home extends Component {
                 <div className ="container border">
                 
                     <div className="px-3 py-0 rounded p-5">
-                        <div className="card-deck m-3">
+                        <div className="card-deck ">
                             <div className="card ">
                                 <div className="card-body ">
                                     <h3 dir ="ltr" className="text-left">Dear All,</h3>
-                                    <p dir ="ltr" className ="text-left">
-                                        Welcome to Appointment Management System of General Consulate of I.R. of Afghanistani in Munich.
-                                        We encourage you to make an appointment in advance before approaching us for any sort of consulate services.
+                                    <p dir ="ltr" className ="text-left text-small">
+                                    Welcome to the Appointment Management System of the Consulate General of 
+                                    the Islamic Republic of Afghanistan in Munich, Germany. 
+                                    You can book your appointment for the consular services here.  
                                     </p>
                                 </div>
                             </div>
                             <div className="card ">
-                                <div className="card-body text-right" dir ="rtl">
-                                <h3>مراجعین گرامی،</h3>
-                                <p > به بخش سیستم مدیریت وقت ملاقات های جنرال قونسلی جمهوری اسلامی افغانستان در مونیخ، خوش آمدید.</p>
-                                <p>امیدواریم که با ارائه سیستم آنلاین تنظیم ملاقات ها؛ سهولتی را برای شما به وجود آورده باشیم.</p>
+                                <div className="card-body text-right font-weight-bold" dir ="rtl">
+                                <h3>مراجعین گرامی!</h3>
+                                <p > به سیستم مدیریت وقت ملاقات های جنرال قونسلگری جمهوری اسلامی افغانستان در مونشن-المان، خوش آمدید.</p>
+                                <p>برای خدمات قونسلی از اینجا وقت ملاقات گرفته میتوانید.</p>
                                 
                                 </div>
                             </div>
                             
                             <div className="card ">
-                                <div className="card-body text-right" dir ="rtl">
+                                <div className="card-body text-right font-weight-bold" dir ="rtl">
                                 <h3>ښاغليو / آغلو  مراجعينو !</h3>
-                                <p>
-                                د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي  ته ښه راغلاست.</p> 
-                                <p> هيله لرو چي ستاسو لپار مو د انټرنيټي سيستم له لاري د کتني (ملاقات) په پروسه کي آسانتيا را منځته کړي وي .</p>
+                                <p>د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي ته ښه راغلاست.</p> 
+                                <p> د قونسلی د چارو لپاره د کتنی (ملاقات) وخت لدی ځای څخه اخیستلی شی. </p>
                                 
                                 </div>
                             </div>
@@ -66,7 +66,7 @@ class Home extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 pass-track">
                             <div className="card">
                                 <div className="card-header bg-primary">
                                     <div className="card-title m-auto text-center text-white">

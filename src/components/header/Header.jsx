@@ -11,7 +11,9 @@ const Header = () => {
             <div className = "header-bg">
                 <div className ="container">
                     <div className="d-flex flex-row">
-                        <div className ="mr-auto"><img className ="img-fluid" src={logo} alt="logo"/></div>
+                        <div className ="mx-auto ">
+                            <img className ="img-fluid" src={logo} alt="logo"/>
+                        </div>
                         <div className ="align-self-end ">
                             <a href="https://www.facebook.com/AfghanistanInMunichDE/" target="_blank" rel="noopener noreferrer"><i className="facebook icon"/></a>
                         </div>
