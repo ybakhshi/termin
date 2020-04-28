@@ -24,7 +24,7 @@ class Home extends Component {
                             </div>
                             <div className="card ">
                                 <div className="card-body text-right font-weight-bold" dir ="rtl">
-                                <h3>مراجعین گرامی!</h3>
+                                <h3 className = "font-weight-bold">مراجعین گرامی!</h3>
                                 <p > به سیستم مدیریت وقت ملاقات های جنرال قونسلگری جمهوری اسلامی افغانستان در مونشن-المان، خوش آمدید.</p>
                                 <p>برای خدمات قونسلی از اینجا وقت ملاقات گرفته میتوانید.</p>
                                 
@@ -33,7 +33,7 @@ class Home extends Component {
                             
                             <div className="card ">
                                 <div className="card-body text-right font-weight-bold" dir ="rtl">
-                                <h3>ښاغليو / آغلو  مراجعينو !</h3>
+                                <h3 className = "font-weight-bold">ښاغليو / آغلو  مراجعينو !</h3>
                                 <p>د المان هيواد په مونشن كي د افغانستان د اسلامي جمهوريت د جنرال قونسلګرۍ دکتنې (ملاقات) د وخت اخيستي څانګي ته ښه راغلاست.</p> 
                                 <p> د قونسلی د چارو لپاره د کتنی (ملاقات) وخت لدی ځای څخه اخیستلی شی. </p>
                                 
