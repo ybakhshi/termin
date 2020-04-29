@@ -3,3 +3,23 @@
     color: #0074D9;
     font-size: 16px;
 }
+.progress-container{
+    margin:  40px 50px 0 50px;
+    width: 100%;
+}
+
+.english-content{
+    margin: 10px 40px;
+}
+
+.ps-fa-content{
+    padding: 50px;
+    margin: 10px 40px;
+}
+.ps-fa-content p, li{
+    font-size: 16px;
+    font-weight: 600;
+}
+.inner-content{
+    padding: 20px;
+}
