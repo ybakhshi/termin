@@ -15,7 +15,6 @@ import { fab, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import PassportPage from './PassportPage';
 import NotFound from './appointment/NotFound';
-import Notice from './appointment/Notice';
 
 
 library.add(fab, faCheckSquare, faCoffee, faSpinner, faFacebook )
@@ -24,14 +23,14 @@ function App() {
   return (
       <div className ="Site">
         <ToastContainer/>
-        <Router history ={history}>
+        <Router history ={history} >
           <Header/>     
           <div className ="Site-content">
                 <Switch>
                   <Route exact path ="/edit/:id" component = {Edit} />
                   <Route path = "/not-found" component = {NotFound}/>
                   <Route path ="/passport" component = {PassportPage} />
-                  <Route path ="/appointment" component = {Notice} />
+                  <Route path ="/appointment" component = {BookAppointment} />
                   <Route exact path ="/" component = {Home} />
                   <Redirect to = "/not-found"/>
                 </Switch>
