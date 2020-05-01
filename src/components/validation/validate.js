@@ -1,4 +1,7 @@
 // import config from '../../config.json';
+
+import { getDate, getMonth } from "date-fns";
+
 // import axios from 'axios';
 export const validate = (formValues) =>{
     const errors ={};
@@ -17,6 +20,19 @@ export const validate = (formValues) =>{
     }
     if(!formValues.memberNames || formValues.memberNames.trim() === ""){
         errors.memberNames = "You must family member names";
+    }
+    if(!formValues.service || formValues.service === ""){
+        errors.service = "You must select this option!";
+    }
+    if(!formValues.appointmentDate || formValues.appointmentDate === ""){
+        errors.appointmentDate = "You must select this option!";
+    }
+    if(formValues.appointmentDate){
+        const {appointmentDate} = formValues;
+        const result = isHoliday(appointmentDate);
+        if(result){
+            errors.appointmentDate = "Feiertag | Holiday | لطفا یک تاریخ دیگرانتخاب کنید";
+        }
     }
     if(!formValues.email || formValues.email.trim() === ""){
         errors.email = "You must enter an email!";
@@ -45,12 +61,7 @@ export const validate = (formValues) =>{
     if(!formValues.totalMembers || formValues.totalMembers === ""){
         errors.totalMembers = "You must select this option!";
     }
-    if(!formValues.service || formValues.service === ""){
-        errors.service = "You must select this option!";
-    }
-    if(!formValues.appointmentDate || formValues.appointmentDate === ""){
-        errors.appointmentDate = "You must select this option!";
-    }
+    
     // to hide the How many field and relevant below fields
 
     if(formValues.hasMemberValue && formValues.totalMembers === ""){
@@ -107,6 +118,29 @@ export const validate = (formValues) =>{
         errors.address = "Please provide a proper address[Street No, postalcolde, city ] within selected state!";
         errors.stateList = "State and below addres do not match!";
     }
+    
     return errors;
 }
 
+const isHoliday =(tdate)=>
+{
+    const d = getDate(tdate);
+    const m = getMonth(tdate)+1;
+    var hday = false;
+	switch(m)
+	{
+		case 1: if(d === 1 || d === 6) hday = true; break;
+		case 3: if(d === 21) hday = true; break;
+		case 4: if(d === 10 || d === 13) hday = true; break;
+		case 5: if(d === 1 || d === 21) hday = true; break;
+		case 6: if(d === 1 || d === 11) hday = true; break;
+		case 8: if(d === 15) hday = true; break;
+        case 9: if(d === 9) hday = true; break;
+		case 10: if(d === 3) hday = true; break;
+		case 11: if(d === 1) hday = true; break;
+		case 12: if( d === 25 || d === 26) hday = true; break;
+		default: break;
+	}
+	
+	return hday;
+}
