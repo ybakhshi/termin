@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {disableFullyBookedDates} from '../../actions/index';
-import { getDay, addDays} from 'date-fns';
+import { getDay, addDays, addMonths} from 'date-fns';
 import ReactDatePciker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './formFunctions.css';
@@ -9,7 +9,6 @@ import './formFunctions.css';
 // react-date-picker library is used here. its dependecy  is date-fns
 const DatePicker = ({input, label, meta, service}) => {
     const[disableTheseDates, setTheseDates] = useState([]);
-    
     const className = `form-control form-control-lg ${meta.error && meta.visited ? 'is-invalid': ''}`;
     //filter weekend dates
     const isWeekday = (date) => {
@@ -44,7 +43,8 @@ const DatePicker = ({input, label, meta, service}) => {
                     dateFormat="dd/MM/yyyy"
                     onChange ={input.onChange}
                     filterDate={isWeekday}
-                    minDate={new Date()}
+                    minDate={new Date("2020,08,02")}
+                    maxDate ={ addMonths(new Date(), 6) }
                     className ={className}
                     placeholderText ="dd/mm/yyyy"
                     isClearable
