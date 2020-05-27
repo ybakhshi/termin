@@ -23,7 +23,8 @@ const Footer = () => {
                             
                                 </p>
                                 <p className="text-center">
-                                    Desinged and developed by Yonus Bakhshi
+                                    Desinged and developed by  
+                                    <a href="http://yonus.bakhshiteam.com" target="_blank" rel="noopener noreferrer"> Yonus Bakhshi</a>
                                 <br/>
                                 <img className="img-fluid pt-2" src={flagLogo} alt="Afghanistan Flag"/>
                                 </p>
