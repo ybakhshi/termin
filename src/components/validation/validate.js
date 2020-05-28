@@ -1,6 +1,6 @@
 // import config from '../../config.json';
 
-import { getDate, getMonth } from "date-fns";
+import { getDate, getMonth, getYear } from "date-fns";
 
 // import axios from 'axios';
 export const validate = (formValues) =>{
@@ -29,6 +29,9 @@ export const validate = (formValues) =>{
     }
     if(formValues.appointmentDate){
         const {appointmentDate} = formValues;
+        if(isBeforeAugust(appointmentDate)){
+            errors.appointmentDate = " Appointment is not possible before Aug 2020 | اخذ وقت ملاقات قبل از تاریخ 02.08.2020 ممکن نمی باشد";
+        }
         const result = isHoliday(appointmentDate);
         if(result){
             errors.appointmentDate = "Feiertag | Holiday | لطفا یک تاریخ دیگرانتخاب کنید";
@@ -122,6 +125,17 @@ export const validate = (formValues) =>{
     return errors;
 }
 
+const isBeforeAugust = (tdate) =>{
+    const d = getDate(tdate);
+    const m = getMonth(tdate)+1;
+    const y = getYear(tdate);
+    console.log(typeof(y));
+    if(m < 8 && y===2020)
+    return true;
+    else 
+    return false;
+
+}
 const isHoliday =(tdate)=>
 {
     const d = getDate(tdate);
