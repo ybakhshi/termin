@@ -126,7 +126,7 @@ export const validate = (formValues) =>{
 }
 
 const isBeforeAugust = (tdate) =>{
-    const d = getDate(tdate);
+    
     const m = getMonth(tdate)+1;
     const y = getYear(tdate);
     console.log(typeof(y));
