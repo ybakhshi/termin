@@ -43,7 +43,7 @@ const DatePicker = ({input, label, meta, service}) => {
                     dateFormat="dd/MM/yyyy"
                     onChange ={input.onChange}
                     filterDate={isWeekday}
-                    minDate={new Date("2020,08,02")}
+                    minDate={new Date("2020,07,01")}
                     maxDate ={ addMonths(new Date(), 6) }
                     className ={className}
                     placeholderText ="dd/mm/yyyy"

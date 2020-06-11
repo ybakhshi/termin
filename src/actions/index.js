@@ -10,13 +10,15 @@ export const insertAppointment = (formValues) =>{
     appointmentAxios.post('/insertdata.php', {...formValues},{headers: config.headers});
 };
 
-export const hasActiveAppointment = (service, email)=>{
-    return appointmentAxios.post('/hasactiveappointment.php', {service, email},{headers: config.headers});
+export const hasActiveAppointment = (service, email, tdate)=>{
+    return appointmentAxios.post('/hasactiveappointment.php', {service, email, tdate},{headers: config.headers});
 }
 export const disableFullyBookedDates = (service)=>{
     return appointmentAxios.post('/disablefullybookeddates.php',{service},{headers: config.headers});
 }
-
+// export const isTheDateFullyBooked = async (tdate, service)=>{
+//     return appointmentAxios.post('/isthedatefullybooked.php',{tdate,service},{headers: config.headers});
+// }
 export const sendPinEmail = (data) =>{
     appointmentAxios.post('/sendemail.php', {...data},{headers: config.headers});
 }

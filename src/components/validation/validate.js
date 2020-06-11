@@ -1,4 +1,4 @@
-// import config from '../../config.json';
+//import { isTheDateFullyBooked } from '../../actions/index';
 
 import { getDate, getMonth, getYear } from "date-fns";
 
@@ -30,7 +30,7 @@ export const validate = (formValues) =>{
     if(formValues.appointmentDate){
         const {appointmentDate} = formValues;
         if(isBeforeAugust(appointmentDate)){
-            errors.appointmentDate = " Appointment is not possible before Aug 2020 | اخذ وقت ملاقات قبل از تاریخ 02.08.2020 ممکن نمی باشد";
+            errors.appointmentDate = "Appointment is not possible before 01.07.2020 | اخذ وقت ملاقات قبل از تاریخ 01.07.2020 ممکن نمی باشد";
         }
         const result = isHoliday(appointmentDate);
         if(result){
@@ -124,13 +124,21 @@ export const validate = (formValues) =>{
     
     return errors;
 }
-
+// const isFullyBooked = (tdate, service) => {
+//     const dd = tdate.getDate()+(-2);
+//     const mm = tdate.getMonth()+1;
+//     const yy = tdate.getFullYear();
+//     const newDate = dd+"/"+mm+"/"+yy;
+//     console.log(newDate);
+//     const callStatus = isTheDateFullyBooked(newDate,service)
+//     console.log(callStatus);
+//     return callStatus;
+// }
 const isBeforeAugust = (tdate) =>{
     
     const m = getMonth(tdate)+1;
     const y = getYear(tdate);
-    console.log(typeof(y));
-    if(m < 8 && y===2020)
+    if(m < 7 && y===2020)
     return true;
     else 
     return false;

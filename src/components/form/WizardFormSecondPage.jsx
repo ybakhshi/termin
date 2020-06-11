@@ -65,14 +65,24 @@ let WizardFormSecondPage = (props) => {
   }
   
   const submit = async (values)=>{
+    const {service, email, appointmentDate} = values;
+    const dd = appointmentDate.getDate();
+    const mm = appointmentDate.getMonth()+1;
+    const yy = appointmentDate.getFullYear();
+    const newDate = dd+"/"+mm+"/"+yy;
       try{
-          var response = await hasActiveAppointment(values.service,values.email);
+          var response = await hasActiveAppointment(service,email,newDate);
       }
       catch(ex){
         alert("Something went wrong with us. pleas try again later!");
         return;
       }
-      if(response.data==="moreThan3Appointments")
+      if(response.data==="fullyBooked")
+      throw new SubmissionError({
+        appointmentDate:"Ausgebucht! | ملاقات بیشتر برای تاریخ انتخاب شده ممکن نیست",
+        _error: "لطفا یک تاریخ جدید انتخاب کنید"
+      });
+      else if(response.data==="moreThan3Appointments")
       throw new SubmissionError({
         appointmentDate:"You have 3 active appointments! بیشتر از سه وقت ملاقات اجازه ندارید",
         _error: "شما قبلا وقت ملاقات اخذ نموده اید"
