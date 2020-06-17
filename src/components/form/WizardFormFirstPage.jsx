@@ -4,7 +4,7 @@ import { Field, reduxForm, formValueSelector } from 'redux-form'
 import {validate} from '../validation/validate';
 import {InputElement, SelectElement, InputRadio} from './formFunctions';
 import { numOfPersons } from './formData';
-import LocationSearchInput from './LocationSearchInput';
+//import LocationSearchInput from './LocationSearchInput';
 //import DatePicker from './DatePicker';
 
 
@@ -54,11 +54,18 @@ const rederSingleInput =(i) =>{
           </Field>
   
           {stateList && 
-          <Field 
-              name ="address"
-              component ={LocationSearchInput}
-              label ="Address | آدرس"
-          />
+            <Field 
+                name ="address"
+                component ={InputElement}
+                label ="Address | آدرس"
+                type ="text"
+                placeholder = "Full Address"
+            />
+          // <Field 
+          //     name ="address"
+          //     component ={LocationSearchInput}
+          //     label ="Address | آدرس"
+          // />
           }
           
           <div className="row">

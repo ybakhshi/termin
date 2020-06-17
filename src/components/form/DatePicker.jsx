@@ -13,7 +13,7 @@ const DatePicker = ({input, label, meta, service}) => {
     //filter weekend dates
     const isWeekday = (date) => {
         const day = getDay(date);
-        return day !== 0  && day !== 6;
+        return day !== 0  && day !== 5 && day !== 6;
     };
     
     useEffect(()=>{

@@ -6,7 +6,7 @@ import { getDate, getMonth, getYear } from "date-fns";
 export const validate = (formValues) =>{
     const errors ={};
     //below addressArray is required for validating address field  
-    const addressArray= formValues.address? Object.values(formValues.address) : [];
+    // const addressArray= formValues.address? Object.values(formValues.address) : [];
     
     
     if(!formValues.firstName || formValues.firstName.trim() === ""){
@@ -110,17 +110,17 @@ export const validate = (formValues) =>{
     if(formValues.address === null || formValues.address=== undefined){
         errors.address = "Address is a required field";
     }
-    if(!addressArray[0] || addressArray[0].trim() ===""){
-        errors.address = "please enter a valid address";
-    }
+    // if(!addressArray[0] || addressArray[0].trim() ===""){
+    //     errors.address = "please enter a valid address";
+    // }
     
-    if(addressArray[1] ==="country"){
-        errors.address = "Required! Enter a valid address!";
-    }
-    if(addressArray[2] && addressArray[2] !== formValues.stateList){
-        errors.address = "Please provide a proper address[Street No, postalcolde, city ] within selected state!";
-        errors.stateList = "State and below addres do not match!";
-    }
+    // if(addressArray[1] ==="country"){
+    //     errors.address = "Required! Enter a valid address!";
+    // }
+    // if(addressArray[2] && addressArray[2] !== formValues.stateList){
+    //     errors.address = "Please provide a proper address[Street No, postalcolde, city ] within selected state!";
+    //     errors.stateList = "State and below addres do not match!";
+    // }
     
     return errors;
 }
