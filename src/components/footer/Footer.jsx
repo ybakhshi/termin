@@ -16,17 +16,19 @@ const Footer = () => {
                     <div className="container-fluid pb-4">
                         <div className="row">
                             <div className="col-xs-12 col-sm-12">
-                                <p className="text-center">
+                                <p className="text-center pt-2">
                                 &copy;{new Date().getFullYear()} 
                                 - Online Appointment Management System and passport tracking system.
                                 <br/>Consulate General of the Islamic Republic of Afghanistan, Munich - Germany.
                             
                                 </p>
                                 <p className="text-center">
-                                    Desinged and developed by  
-                                    <a href="http://yonus.bakhshiteam.com" target="_blank" rel="noopener noreferrer"> Yonus Bakhshi</a>
+                                    {/* <span>
+                                        Desinged and developed by  
+                                        <a href="http://yonus.bakhshiteam.com" target="_blank" rel="noopener noreferrer"> Yonus Bakhshi</a>
+                                    </span> */}
                                 <br/>
-                                <img className="img-fluid pt-2" src={flagLogo} alt="Afghanistan Flag"/>
+                                <img className="img-fluid" src={flagLogo} alt="Afghanistan Flag"/>
                                 </p>
                                 
                             </div>
