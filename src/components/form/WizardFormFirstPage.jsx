@@ -140,6 +140,7 @@ const rederSingleInput =(i) =>{
                   {(Number(totalMembers)===4) && rederSingleInput(1)}
                   {(Number(totalMembers)===5) && rederSingleInput(1)}
                   {(Number(totalMembers)===7) && rederSingleInput(1)}
+                  {(Number(totalMembers)===10) && rederSingleInput(1)}
                 </div>
               </div>
               <div className="row">
@@ -230,7 +231,103 @@ const rederSingleInput =(i) =>{
                   {(Number(totalMembers)===7) && rederSingleInput(7)} 
                   </div>
                 </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===8) && rederSingleInput(1)}      
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===8) && rederSingleInput(2)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===8) && rederSingleInput(3)}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===8) && rederSingleInput(4)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===8) && rederSingleInput(5)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===8) && rederSingleInput(6)} 
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-6">
+                  {(Number(totalMembers)===8) && rederSingleInput(7)}
+                  </div>
+                  <div className="col-md-6">
+                  {(Number(totalMembers)===8) && rederSingleInput(8)}
+                  </div>
+                </div>
 
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(1)}      
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(2)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(3)}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(4)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(5)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(6)} 
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(7)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(8)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===9) && rederSingleInput(9)} 
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(2)}      
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(3)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(4)}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(5)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(6)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(7)} 
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(8)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(9)}
+                  </div>
+                  <div className="col-md-4">
+                  {(Number(totalMembers)===10) && rederSingleInput(10)} 
+                  </div>
+                </div>
         </div>
         <div className ="form-group">
           <button 

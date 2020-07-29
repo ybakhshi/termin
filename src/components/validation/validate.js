@@ -91,6 +91,15 @@ export const validate = (formValues) =>{
     if(!formValues.person7 || formValues.person7.trim() ===""){
         errors.person7 = "This is a required field";
     }
+    if(!formValues.person8 || formValues.person8.trim() ===""){
+        errors.person8 = "This is a required field";
+    }
+    if(!formValues.person9 || formValues.person9.trim() ===""){
+        errors.person9 = "This is a required field";
+    }
+    if(!formValues.person10 || formValues.person10.trim() ===""){
+        errors.person10 = "This is a required field";
+    }
     if(!formValues.iConfirmData){
         errors.iConfirmData = "This is a required field";
     }
@@ -151,14 +160,15 @@ const isHoliday =(tdate)=>
     var hday = false;
 	switch(m)
 	{
-		case 1: if(d === 1 || d === 6) hday = true; break;
+        case 1: if(d === 1 || d === 6) hday = true; break;
+        case 2: if(d === 14) hday = true; break;
 		case 3: if(d === 21) hday = true; break;
 		case 4: if(d === 10 || d === 13) hday = true; break;
 		case 5: if(d === 1 || d === 21) hday = true; break;
 		case 6: if(d === 1 || d === 11) hday = true; break;
-		case 8: if(d === 15) hday = true; break;
-        case 9: if(d === 9) hday = true; break;
-		case 10: if(d === 3) hday = true; break;
+		case 8: if(d === 15 || d ===18 || d ===29) hday = true; break;
+        case 9: if(d === 9 || d ===8) hday = true; break;
+		case 10: if(d === 3 || d ===29) hday = true; break;
 		case 11: if(d === 1) hday = true; break;
 		case 12: if( d === 25 || d === 26) hday = true; break;
 		default: break;

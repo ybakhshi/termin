@@ -98,6 +98,21 @@ export const subjects = [
       label: '7 Persons',
       value: 7,
     }
+    ,
+    {
+      label: '8 Persons',
+      value: 8,
+    }
+    ,
+    {
+      label: '9 Persons',
+      value: 9,
+    }
+    ,
+    {
+      label: '10 Persons',
+      value: 10,
+    }
   ];
   
   export const englishMonthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];

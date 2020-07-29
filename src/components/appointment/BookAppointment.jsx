@@ -42,7 +42,12 @@ class BookAppointment extends Component {
                     +", "+formValues.person5+", "+formValues.person6;
             case '7': return formValues.person1+", "+formValues.person2+", "+formValues.person3+", "+formValues.person4
                     +", "+formValues.person5+", "+formValues.person6+", "+formValues.person7;
-                    
+            case '8': return formValues.person1+", "+formValues.person2+", "+formValues.person3+", "+formValues.person4
+                    +", "+formValues.person5+", "+formValues.person6+", "+formValues.person7+", "+formValues.person8;
+            case '9': return formValues.person1+", "+formValues.person2+", "+formValues.person3+", "+formValues.person4
+                    +", "+formValues.person5+", "+formValues.person6+", "+formValues.person7+", "+formValues.person8+", "+formValues.person9; 
+            case '10': return formValues.person1+", "+formValues.person2+", "+formValues.person3+", "+formValues.person4
+                    +", "+formValues.person5+", "+formValues.person6+", "+formValues.person7+", "+formValues.person8+", "+formValues.person9+", "+formValues.person10;        
             default: return null;
         }
     }
