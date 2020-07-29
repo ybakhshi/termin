@@ -43,7 +43,7 @@ const DatePicker = ({input, label, meta, service}) => {
                     dateFormat="dd/MM/yyyy"
                     onChange ={input.onChange}
                     filterDate={isWeekday}
-                    minDate={new Date("2020,07,01")}
+                    minDate={new Date()}
                     maxDate ={ addMonths(new Date(), 6) }
                     className ={className}
                     placeholderText ="dd/mm/yyyy"
@@ -64,31 +64,3 @@ const DatePicker = ({input, label, meta, service}) => {
 };
 
 export default React.memo(DatePicker);
-
-// fOR LIVE PHP SERVER
-            // axios.post(config.apiEndPoint+'/disablefullybookeddates.php',{service})
-            // .then(response =>{
-            //     response.data.forEach(eachDate =>{
-            //         disableBookedDates.push(addDays(new Date(),eachDate));
-            //     })
-            // });
-            //FOR LOCAL PHP SERVER
-
-// .then(response =>{
-            //     console.log(response.data);
-            //     response.data.forEach(eachDate =>{
-            //         disableBookedDates.push(addDays(new Date(),eachDate));
-            //     })
-            // });
-            // axios({
-            //     method: 'post',
-            //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            //     url: config.apiEndPoint+'/disablefullybookeddates.php',
-            //     data: {service: service}
-            // })
-            // .then(response =>{
-            //     console.log(response.data);
-            //     response.data.forEach(eachDate =>{
-            //         disableBookedDates.push(addDays(new Date(),eachDate));
-            //     })
-            // });
