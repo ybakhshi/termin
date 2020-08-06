@@ -15,6 +15,7 @@ import { fab, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import PassportPage from './PassportPage';
 import NotFound from './appointment/NotFound';
+import CancelAppointment from './appointment/DeleteAppointmentForm';
 
 
 library.add(fab, faCheckSquare, faCoffee, faSpinner, faFacebook )
@@ -31,6 +32,7 @@ function App() {
                   <Route path = "/not-found" component = {NotFound}/>
                   <Route path ="/passport" component = {PassportPage} />
                   <Route path ="/appointment" component = {BookAppointment} />
+                  <Route path ="/cancel" component = {CancelAppointment} />
                   <Route exact path ="/" component = {Home} />
                   <Redirect to = "/not-found"/>
                 </Switch>

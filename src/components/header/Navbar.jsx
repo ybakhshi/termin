@@ -58,6 +58,16 @@ const Navbar = () => {
                         >PASSPORT STATUS
                         </NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink 
+                            onClick={toggleNavbar} 
+                            className="nav-link" 
+                            to="/cancel" 
+                            activeClassName ="main-nav-active"
+                            
+                        >CANCEL APPOINTMENT
+                        </NavLink>
+                    </li>
                     </ul>
                 </div>
             </div>
