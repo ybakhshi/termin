@@ -29,8 +29,10 @@ export const validate = (formValues) =>{
     }
     if(formValues.appointmentDate){
         const {appointmentDate} = formValues;
-        if(isBeforeAugust(appointmentDate)){
-            errors.appointmentDate = "Appointment is not possible before 01.07.2020 | اخذ وقت ملاقات قبل از تاریخ 01.07.2020 ممکن نمی باشد";
+        const startLimit = isBeforeAugust(appointmentDate);
+        //console.log(startLimit)
+        if(startLimit){
+            errors.appointmentDate = "Appointment is not possible before 05.10.2020 | اخذ وقت ملاقات قبل از تاریخ 05.10.2020 ممکن نمی باشد";
         }
         const result = isHoliday(appointmentDate);
         if(result){
@@ -146,8 +148,9 @@ export const validate = (formValues) =>{
 const isBeforeAugust = (tdate) =>{
     
     const m = getMonth(tdate)+1;
+    const d = getDate(tdate);
     const y = getYear(tdate);
-    if(m < 7 && y===2020)
+    if(m < 10 && y===2020)
     return true;
     else 
     return false;
@@ -168,7 +171,7 @@ const isHoliday =(tdate)=>
 		case 6: if(d === 1 || d === 11) hday = true; break;
 		case 8: if(d === 15 || d ===18 || d ===29) hday = true; break;
         case 9: if(d === 9 || d ===8) hday = true; break;
-		case 10: if(d === 3 || d ===29) hday = true; break;
+		case 10: if(d === 1 || d ===29) hday = true; break;
 		case 11: if(d === 1) hday = true; break;
 		case 12: if( d === 25 || d === 26) hday = true; break;
 		default: break;
