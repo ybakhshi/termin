@@ -148,7 +148,6 @@ export const validate = (formValues) =>{
 const isBeforeAugust = (tdate) =>{
     
     const m = getMonth(tdate)+1;
-    const d = getDate(tdate);
     const y = getYear(tdate);
     if(m < 10 && y===2020)
     return true;
@@ -171,7 +170,7 @@ const isHoliday =(tdate)=>
 		case 6: if(d === 1 || d === 11) hday = true; break;
 		case 8: if(d === 15 || d ===18 || d ===29) hday = true; break;
         case 9: if(d === 9 || d ===8) hday = true; break;
-		case 10: if(d === 1 || d ===29) hday = true; break;
+		case 10: if(d === 1 || d === 5 || d === 6 || d ===29) hday = true; break;
 		case 11: if(d === 1) hday = true; break;
 		case 12: if( d === 25 || d === 26) hday = true; break;
 		default: break;
